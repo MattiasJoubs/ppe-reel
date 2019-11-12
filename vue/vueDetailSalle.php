@@ -13,8 +13,7 @@ for ($i = 0; $i < count($listeDetail); $i++)
                if($listeDetail[$i]["nomSalle"] == $listeDetailPoste[$j]["nomSalle"]) {?>
                  <br/><br/><h3><?= " ",$listeDetailPoste[$j]["nomPoste"]," :"; ?></h3> <br/>
                 <?= "Numéro De Poste : ",$listeDetailPoste[$j]["nPoste"];?> <br/>
-                <?= "ID Administrateur : ",$listeDetailPoste[$j]["ad"];?> <br/>
-                <?= "IP : ",$listeDetailPoste[$j]["indIP"];?> <br/>
+                <?= "IP : ",$listeDetailPoste[$j]["indIP"],".",$listeDetailPoste[$j]["ad"];?> <br/>
                 <?= "Type Poste : ",$listeDetailPoste[$j]["typePoste"];
             }}?>
             <br />
