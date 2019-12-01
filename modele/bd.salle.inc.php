@@ -25,7 +25,7 @@ function afficherPoste() {
         $resultat = array();
         try {
             $cnx = connexionPDO();
-            $req = $cnx->prepare("select nomPoste, nomSalle from poste inner join salle on poste.nSalle = salle.nSalle");
+            $req = $cnx->prepare("select nomPoste, nomSalle,poste.indIP,typePoste, nPoste, ad from poste inner join salle on poste.nSalle = salle.nSalle");
             $req->execute();
     
             $ligne = $req->fetch(PDO::FETCH_ASSOC);

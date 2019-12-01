@@ -2,8 +2,8 @@
 
 function connexionPDO() {
     $login = "root";
-    $mdp = "";
-    $bd = "bddm";
+    $mdp = "root";
+    $bd = "bddscript2";
     $serveur = "localhost";
 
     try {
