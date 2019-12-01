@@ -2,11 +2,27 @@
 
 include_once "bd.inc.php";
 
+function connexionPDO2() {
+    $login = "root";
+    $mdp = "root";
+    $bd = "mrbs";
+    $serveur = "localhost";
+
+    try {
+        $conn = new PDO("mysql:host=$serveur;dbname=$bd", $login, $mdp, array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES \'UTF8\'')); 
+        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        return $conn;
+    } catch (PDOException $e) {
+        print "Erreur de connexion PDO ";
+        die();
+    }
+}
+
 function getUtilisateurs() {
 
     try {
-        $cnx = connexionPDO();
-        $req = $cnx->prepare("select * from utilisateur");
+        $cnx = connexionPDO2();
+        $req = $cnx->prepare("select * from mrbs_users");
         $req->execute();
 
         $ligne = $req->fetch(PDO::FETCH_ASSOC);
@@ -24,8 +40,8 @@ function getUtilisateurs() {
 function getUtilisateurByMailU($mailU) {
 
     try {
-        $cnx = connexionPDO();
-        $req = $cnx->prepare("select * from utilisateur where mailU=:mailU");
+        $cnx = connexionPDO2();
+        $req = $cnx->prepare("select * from mrbs_users where email=:mailU");
         $req->bindValue(':mailU', $mailU, PDO::PARAM_STR);
         $req->execute();
         
@@ -39,10 +55,10 @@ function getUtilisateurByMailU($mailU) {
 
 function addUtilisateur($mailU, $mdpU, $pseudoU) {
     try {
-        $cnx = connexionPDO();
+        $cnx = connexionPDO2();
 
         $mdpUCrypt = crypt($mdpU, "sel");
-        $req = $cnx->prepare("insert into utilisateur (mailU, mdpU, pseudoU) values(:mailU,:mdpU,:pseudoU)");
+        $req = $cnx->prepare("insert into mrbs_users (email, password, name) values(:mailU,:mdpU,:pseudoU)");
         $req->bindValue(':mailU', $mailU, PDO::PARAM_STR);
         $req->bindValue(':mdpU', $mdpUCrypt, PDO::PARAM_STR);
         $req->bindValue(':pseudoU', $pseudoU, PDO::PARAM_STR);
