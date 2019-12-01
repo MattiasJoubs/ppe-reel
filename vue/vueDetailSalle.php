@@ -1,4 +1,4 @@
-<h1>Liste des Salles Informatiques</h1>
+<h1 class="display-4">Liste des Salles Informatiques</h1>
 <?php
 for ($i = 0; $i < count($listeDetail); $i++) 
 {
@@ -7,7 +7,7 @@ for ($i = 0; $i < count($listeDetail); $i++)
     
         <div class="descrCard"><?= "<h2 class='titreSalle'>".$listeDetail[$i]['nomSalle'] . "</h2>"; ?>
             <br />
-            <?= "Il y a ",$listeDetail[$i]["nbPoste"], " postes dans la salle" ?>
+            <?= " Il y a ",$listeDetail[$i]["nbPoste"], " postes dans la salle" ?>
             <br>
             <?php for ($j = 0; $j < count($listeDetailPoste); $j++) {
                if($listeDetail[$i]["nomSalle"] == $listeDetailPoste[$j]["nomSalle"]) {?>

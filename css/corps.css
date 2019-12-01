@@ -31,18 +31,18 @@ span.tag {
 div.card {
 	position: relative;
 	width: 92%;
-	height: 65px;
+	height: auto;
 	float: left;
 	padding: 10px;
 	margin: 10px;
 	color: white;
-	background-color: #FEC816;
-	border: 1rem solid #555555;
-	box-shadow: 1px 1px 4px #bbb;
+	background-color: #C8BEB5;
+	box-shadow: 1px 3px 5px 3px rgba(0, 0, 0, 0.3);
+	border-radius: 2px 2px 2px;
 }
 
 div.titreSalle {
-	font-size: 200%;
+	font-size: 150%;
 }
 
 div.photoCard>img {
