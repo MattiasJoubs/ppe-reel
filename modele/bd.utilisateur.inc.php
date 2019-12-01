@@ -19,7 +19,6 @@ function connexionPDO2() {
 }
 
 function getUtilisateurs() {
-
     try {
         $cnx = connexionPDO2();
         $req = $cnx->prepare("select * from mrbs_users");
@@ -38,7 +37,6 @@ function getUtilisateurs() {
 }
 
 function getUtilisateurByMailU($mailU) {
-
     try {
         $cnx = connexionPDO2();
         $req = $cnx->prepare("select * from mrbs_users where email=:mailU");
@@ -58,7 +56,9 @@ function addUtilisateur($mailU, $mdpU, $pseudoU) {
         $cnx = connexionPDO2();
 
         $mdpUCrypt = crypt($mdpU, "sel");
-        $req = $cnx->prepare("insert into mrbs_users (email, password, name) values(:mailU,:mdpU,:pseudoU)");
+        $req = $cnx->prepare("insert into mrbs_users (level, email, password, name) 
+            values(:levelU, :mailU,:mdpU,:pseudoU)");
+        $req->bindValue(':levelU', 0);
         $req->bindValue(':mailU', $mailU, PDO::PARAM_STR);
         $req->bindValue(':mdpU', $mdpUCrypt, PDO::PARAM_STR);
         $req->bindValue(':pseudoU', $pseudoU, PDO::PARAM_STR);
@@ -71,7 +71,21 @@ function addUtilisateur($mailU, $mdpU, $pseudoU) {
     return $resultat;
 }
 
+function getLevelByMaiU($mailU){
+    try {
+        $cnx = connexionPDO2();
 
+        $req = $cnx->prepare("select level from mrbs_users where email=:mailU");
+        $req->bindValue(':mailU', $mailU, PDO::PARAM_STR);
+        $req->execute();
+        
+        $resultat = $req->fetch(PDO::FETCH_ASSOC);
+    } catch (PDOException $e) {
+        print "Erreur !: " . $e->getMessage();
+        die();
+    }
+    return $resultat;
+}
 
 if ($_SERVER["SCRIPT_FILENAME"] == __FILE__) {
     // prog principal de test

@@ -8,12 +8,14 @@ function login($mailU, $mdpU) {
     }
 
     $util = getUtilisateurByMailU($mailU);
-    $mdpBD = $util["mdpU"];
+    $mdpBD = $util["password"];
+    $level = getLevelByMaiU($mailU);
 
     if (trim($mdpBD) == trim(crypt($mdpU, $mdpBD))) {
         // le mot de passe est celui de l'utilisateur dans la base de donnees
         $_SESSION["mailU"] = $mailU;
         $_SESSION["mdpU"] = $mdpBD;
+        $_SESSION["levelU"] = $level;
     }
 }
 
@@ -44,7 +46,7 @@ function isLoggedOn() {
 
     if (isset($_SESSION["mailU"])) {
         $util = getUtilisateurByMailU($_SESSION["mailU"]);
-        if ($util["mailU"] == $_SESSION["mailU"] && $util["mdpU"] == $_SESSION["mdpU"]
+        if ($util["email"] == $_SESSION["mailU"] && $util["password"] == $_SESSION["mdpU"]
         ) {
             $ret = true;
         }
@@ -56,16 +58,5 @@ if ($_SERVER["SCRIPT_FILENAME"] == __FILE__) {
     // prog principal de test
     header('Content-Type:text/plain');
 
-
-    // test de connexion
-    login("test@bts.sio", "sio");
-    if (isLoggedOn()) {
-        echo "logged";
-    } else {
-        echo "not logged";
-    }
-
-    // deconnexion
-    logout();
 }
 ?>

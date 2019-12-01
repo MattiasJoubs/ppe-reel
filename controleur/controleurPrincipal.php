@@ -7,6 +7,9 @@ function controleurPrincipal($action) {
     $lesActions["salle"] = "listeSalles.php";
     $lesActions["detail"] = "detailSalle.php";
     $lesActions["connexion"] = "connexion.php";
+    $lesActions["inscription"] = "inscription.php";
+    $lesActions["deconnexion"] = "deconnexion.php";
+    $lesActions["profil"] = "monProfil.php";
 
 
     if (array_key_exists($action, $lesActions)) {
