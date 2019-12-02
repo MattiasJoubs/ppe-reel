@@ -5,10 +5,6 @@ if ($_SERVER["SCRIPT_FILENAME"] == __FILE__) {
 }
 include_once "$racine/modele/bd.utilisateur.inc.php";
 
-// creation du menu burger
-$menuBurger = array();
-$menuBurger[] = Array("url"=>"./?action=connexion","label"=>"Connexion");
-$menuBurger[] = Array("url"=>"./?action=inscription","label"=>"Inscription");
 
 
 $inscrit = false;
@@ -42,7 +38,7 @@ if ($inscrit) {
     include "$racine/vue/pied.html.php";
 } else {
     // appel du script de vue qui permet de gerer l'affichage des donnees
-    $titre = "Inscription pb";
+    $titre = "Inscription";
     include "$racine/vue/entete.html.php";
     include "$racine/vue/vueInscription.php";
     include "$racine/vue/pied.html.php";

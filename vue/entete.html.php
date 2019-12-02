@@ -17,7 +17,33 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     </head>
     <body>
-    <nav>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="./?action=accueil">M2L</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="./?action=accueil">Accueil <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="./?action=salle">Liste</a>
+            </li>
+            </ul>
+        </div>
+        <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+            <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="./?action=connexion">Connexion</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="./?action=inscription">Inscription</a>
+            </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- <nav>
             
         <ul id="menuGeneral">
             <li><a href="./?action=accueil">Accueil</a></li> 
@@ -35,7 +61,7 @@
             <?php } ?>
 
         </ul>
-    </nav>
+    </nav> -->
     <div id="bouton">
         <div></div>
         <div></div>

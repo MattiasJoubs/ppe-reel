@@ -36,7 +36,7 @@ div.card {
 	padding: 10px;
 	margin: 10px;
 	color: white;
-	background-color: #C8BEB5;
+	background-color: #16a2b8;
 	box-shadow: 1px 3px 5px 3px rgba(0, 0, 0, 0.3);
 	border-radius: 2px 2px 2px;
 }
@@ -109,4 +109,8 @@ img.aimer {
 	padding: 8px;
 	margin: 5px;
 	border-radius: 2px;
+}
+
+a {
+	color: #FFF!important;
 }

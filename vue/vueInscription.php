@@ -1,4 +1,5 @@
-<h1>Inscription</h1>
+<br>
+<h1 class="h1">Inscription</h1>
 <span id="alerte"><?= $msg ?></span>
 <form action="./?action=inscription" method="POST">
 

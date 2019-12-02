@@ -1,4 +1,5 @@
-<h1>Liste des Salles Informatiques</h1>
+<br>
+<h1 class="h1">Liste des Salles Informatiques</h1>
 <?php
 for ($i = 0; $i < count($listeSalle); $i++) 
 {
