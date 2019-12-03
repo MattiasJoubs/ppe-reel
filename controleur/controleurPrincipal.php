@@ -2,7 +2,7 @@
 
 function controleurPrincipal($action) {
     $lesActions = array();
-    $lesActions["defaut"] = "inscription.php";
+    $lesActions["defaut"] = "connexion.php";
     $lesActions["accueil"] = "accueil.php";
     $lesActions["salle"] = "listeSalles.php";
     $lesActions["detail"] = "detailSalle.php";

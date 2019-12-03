@@ -18,7 +18,7 @@
     </head>
     <body>
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
-        <a class="navbar-brand" href="./?action=accueil">M2L</a>
+        <a class="navbar-brand" href="./?action=accueil"><img src="./images/logoBarre.png"/>M2L</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -34,50 +34,17 @@
         </div>
         <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
             <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="./?action=connexion">Connexion</a>
-            </li>
+            <?php if(isLoggedOn()){ ?>
+            <li class="nav-item active"><a class="nav-link" href="./?action=profil">Mon Profil</a></li>
+            <?php } 
+            else{ ?>
+            <li class="nav-item active"><a class="nav-link" href="./?action=connexion">Connexion</a></li>
+            <?php } ?>
             <li class="nav-item active">
                 <a class="nav-link" href="./?action=inscription">Inscription</a>
             </li>
             </ul>
         </div>
     </nav>
-    <!-- <nav>
-            
-        <ul id="menuGeneral">
-            <li><a href="./?action=accueil">Accueil</a></li> 
-            <li><a href="./?action=recherche"><img src="images/rechercher.png" alt="loupe" />Recherche</a></li>
-            <li></li> 
-
-            <li id="logo"><a href="./?action=accueil"><img src="images/logoBarre.png" alt="logo" /></a></li>
-            <li><a href="./?action=salle">Liste Salles</a></li> 
-            <li><a href="./?action=cgu">CGU</a></li>
-            <?php if(isLoggedOn()){ ?>
-            <li><a href="./?action=profil"><img src="images/profil.png" alt="loupe" />Mon Profil</a></li>
-            <?php } 
-            else{ ?>
-            <li><a href="./?action=connexion"><img src="images/profil.png" alt="loupe" />Connexion</a></li>
-            <?php } ?>
-
-        </ul>
-    </nav> -->
-    <div id="bouton">
-        <div></div>
-        <div></div>
-        <div></div>
-    </div>
-    <ul id="menuContextuel">
-        <li><img src="images/logo2.png" alt="logo" /></li>
-        <?php if (isset($menuBurger)) { ?>
-            <?php for ($i = 0; $i < count($menuBurger); $i++) { ?>
-                <li>
-                    <a href="<?php echo $menuBurger[$i]['url']; ?>">
-                        <?php echo $menuBurger[$i]['label']; ?>
-                    </a>
-                </li>
-            <?php } ?>
-        <?php } ?>
-    </ul>
 
     <div id="corps">

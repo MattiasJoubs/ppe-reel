@@ -43,6 +43,7 @@ div.card {
 
 div.titreSalle {
 	font-size: 150%;
+	text-align: center;
 }
 
 div.photoCard>img {
