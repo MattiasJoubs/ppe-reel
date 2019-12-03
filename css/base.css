@@ -238,7 +238,7 @@ a.aimer {
     background-color: #FC2500;
 }
 
-@font-face{
+@font-face {
     font-family: Open;
     src: url("/fonts/SourceSansPro-Regular.otf") format("otf");
 }
@@ -254,27 +254,41 @@ a.aimer {
 }
 
 .h2 {
-        font-size: 2.2rem;
-        background-color: #FFF;
-        
+    font-size: 2.2rem;
+    background-color: #FFF;
+
 }
 
 .h3 {
     font-size: 1.5rem;
     background-color: #FFF;
-    
+
 }
+
+.h2bleu {
+    font-size: 2.2rem;
+    background-color: #D1ECF1;
+
+}
+
+.h3bleu {
+    font-size: 1.5rem;
+    background-color: #D1ECF1;
+
+}
+
 
 .h2centre {
     font-size: 2.2rem;
     background-color: #FFF;
     text-align: center;
-    
+
 }
+
 .h4 {
     font-size: 1.2rem;
     background-color: #FFF;
-    
+
 }
 
 .centrerImage {
@@ -282,6 +296,7 @@ a.aimer {
     margin-left: auto;
     margin-right: auto;
 }
+
 .textCentrer {
     text-align: center;
 }
