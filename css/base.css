@@ -313,3 +313,8 @@ a.aimer {
 .bleuciel {
     background: #d1ecf1;
 }
+
+.fit-picture {
+    float: right;
+    padding-right: 12%;
+}
