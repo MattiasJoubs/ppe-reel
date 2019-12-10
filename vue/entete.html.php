@@ -38,11 +38,6 @@
             
             <li class="nav-item active"><a class="nav-link" href="./?action=profil">Mon Profil</a></li>
             
-            <li class="nav-item active"><a class="nav-link" href="./?action=connexion">Connexion</a></li>
-            
-            <li class="nav-item active">
-                <a class="nav-link" href="./?action=inscription">Inscription</a>
-            </li>
             </ul>
         </div>
     </nav>
