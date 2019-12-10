@@ -316,5 +316,9 @@ a.aimer {
 
 .fit-picture {
     float: right;
-    padding-right: 12%;
+    padding-right: 6%;
+}
+
+#form-connexion {
+    padding-left: 6%;
 }
